@@ -4,10 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        Icelist test = new Icelist();
-
-        test.quest();
-
-
+            Maze maze = new Maze();
+            maze.mazeQuest();
     }
 }

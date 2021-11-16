@@ -77,7 +77,6 @@ public class Maze {
             return false;
         }else if(map[n][m] == 1){
             map[n][m] = map[n][m] +1;
-            queue = map[n][m];
 
             bfs(n+1,m);
             bfs(n,m+1);

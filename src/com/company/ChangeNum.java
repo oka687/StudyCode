@@ -38,11 +38,13 @@ public class ChangeNum {
         Arrays.sort(arrayB);
 
         // 자리바꾸기
-        while(true){
-            if(arrayA[count] < arrayB[num - 1 - count]) {
-                arrayA[count] = arrayB[num - 1 - count];
-                count++;
-            }else if(calcCount -1 == count || calcCount -1 == loopCount){
+            while(true){
+                if(arrayA[count] < arrayB[num - 1 - count]) {
+                    store = arrayA[count];
+                    arrayA[count] = arrayB[num - 1 - count];
+                    arrayB[num - 1 - count] = store;
+                    count++;
+                }else if(calcCount -1 == count || calcCount -1 == loopCount){
                 // 루프 횟수가 연산 횟수를 넘어가거나 연산을 끝내면 break;
                 break;
             }

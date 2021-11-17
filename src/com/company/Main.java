@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        ScoreBigyo compare = new ScoreBigyo();
-        compare.studentScore();
+        ChangeNum cn = new ChangeNum();
+        cn.numChanger();
     }
 }

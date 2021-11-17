@@ -11,6 +11,8 @@ public class ChangeNum {
 
         int num, calcCount,store;
         int result = 0;
+        int count = 0;
+        int loopCount = 0;
 
         System.out.println("배열 숫자 개수 입력");
         num = sc.nextInt();
@@ -36,9 +38,17 @@ public class ChangeNum {
         Arrays.sort(arrayB);
 
         // 자리바꾸기
-        for(int k = 0; k < calcCount; k++){
-            arrayA[k] = arrayB[num - 1 - k];
+        while(true){
+            if(arrayA[count] < arrayB[num - 1 - count]) {
+                arrayA[count] = arrayB[num - 1 - count];
+                count++;
+            }else if(calcCount -1 == count || calcCount -1 == loopCount){
+                // 루프 횟수가 연산 횟수를 넘어가거나 연산을 끝내면 break;
+                break;
+            }
+            loopCount++;
         }
+
 
         // 팩토리얼
         for(int f = 0; f < num; f++){

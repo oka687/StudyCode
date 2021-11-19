@@ -48,9 +48,9 @@ public class ChangeNum {
                 // 루프 횟수가 연산 횟수를 넘어가거나 연산을 끝내면 break;
                 break;
             }
+
             loopCount++;
         }
-
 
         // 팩토리얼
         for(int f = 0; f < num; f++){

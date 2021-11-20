@@ -15,14 +15,14 @@ public class Tteokbokki {
         System.out.println("떡 개수 입력");
         riceCount = sc.nextInt();
         rice = new int[riceCount];
+        
+        System.out.println("손님이 가져갈 떡 길이 입력");
+        customRice = sc.nextInt();
 
-        System.out.println("떡 사이즈 입력");
+        System.out.println("떡 길이 입력");
         for(int i = 0; i < riceCount; i++){
             rice[i] = sc.nextInt();
         }
-
-        System.out.println("손님이 가져갈 떡 길이 입력");
-        customRice = sc.nextInt();
 
         // 정렬
         Arrays.sort(rice);

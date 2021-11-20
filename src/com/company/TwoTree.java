@@ -39,9 +39,11 @@ public class TwoTree {
             for(int a = 0; a < jumoon.length; a++){
                 for(int b = 0; b < stock.length; b++){
                     if(jumoon[a] == stock[b]){
+                        // 비교값이 있으면 바로 종료
                         System.out.print("YES ");
                         break;
                     }else if(stock.length - 1 == b){
+                        // 없으면
                         System.out.print("NO ");
                     }
                 }

@@ -4,7 +4,8 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        TwoTree cn = new TwoTree();
-        cn.bupum();
+        Tteokbokki tk = new Tteokbokki();
+
+        tk.riceCake();
     }
 }

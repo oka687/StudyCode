@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class Tteokbokki {
 
+    // 재귀 때문에 전역변수로 선언
     int [] rice;
     int riceCount,customRice;
 
@@ -32,8 +33,8 @@ public class Tteokbokki {
 
     public void coda(int start, int end) {
 
-        int middle = (end - start) / 2 + start;
-        int lenCalc = 0;
+        int middle = (end - start) / 2 + start;     // 중간값 계산
+        int lenCalc = 0;    // 길이 합
 
         for (int i = 0; i < rice.length; i++) {
             if(rice[i] - middle < 0){

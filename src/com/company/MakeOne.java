@@ -9,21 +9,21 @@ public class MakeOne {
 
         System.out.println("숫자 입력");
         int N=sc.nextInt();
-        int[] dp=new int[N+1];
+        int[] arr = new int[N+1];
         sc.close();
         for(int i=2;i<=N;i++) {
-            dp[i]=dp[i-1]+1;
+            arr[i]=arr[i-1]+1;
             if(i%2==0) {
-                dp[i]=Math.min(dp[i], dp[i/2]+1);
+                arr[i]=Math.min(arr[i], arr[i/2]+1);
             }
             if(i%3==0) {
-                dp[i]=Math.min(dp[i], dp[i/3]+1);
+                arr[i]=Math.min(arr[i], arr[i/3]+1);
             }
             if(i%5==0) {
-                dp[i]=Math.min(dp[i], dp[i/5]+1);
+                arr[i]=Math.min(arr[i], arr[i/5]+1);
             }
         }
-        System.out.println(dp[N]);
+        System.out.println(arr[N]);
     }
 }
 

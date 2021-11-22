@@ -17,6 +17,7 @@ public class MakeOne {
         System.out.println("숫자 입력");
         calcNum = sc.nextInt();
 
+        sc.close();
         // 계산부
         while(true) {
             calcNum = resultQuest(calcNum);

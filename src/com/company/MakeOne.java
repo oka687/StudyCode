@@ -11,6 +11,7 @@ public class MakeOne {
         int N=sc.nextInt();
         int[] arr = new int[N+1];
         sc.close();
+
         for(int i=2;i<=N;i++) {
             arr[i]=arr[i-1]+1;
             if(i%2==0) {

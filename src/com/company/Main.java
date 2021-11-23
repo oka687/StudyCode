@@ -4,8 +4,8 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        MakeOne tk = new MakeOne();
+        AntWarrior tk = new AntWarrior();
 
-        tk.divid();
+        tk.warrior();
     }
 }

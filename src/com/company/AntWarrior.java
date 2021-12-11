@@ -19,8 +19,13 @@ public class AntWarrior {
         }
 
         // 랜덤 돌린 수
-        for(int i : foodSave){
+/*        for(int i : foodSave){
             System.out.print(i+" ");
+        }*/
+
+        // 값 입력
+        for(int a = 0; a < foodSave.length; a++){
+            foodSave[a] = sc.nextInt();
         }
 
         // 0번과 1번은 비교를 위한 수이기 때문에 dp에 그냥 대입. 따라서 2번부터 for문 돌리기 시작

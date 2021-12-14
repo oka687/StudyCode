@@ -8,9 +8,8 @@ public class CardNumGame {
 
     public void game(){
 
-        int M = 4;
-        int N = 2;
-        int bigyo = -1;
+        int M = 5;
+        int N = 5;
 
         int [][] array = new int[N][M];
 
@@ -39,14 +38,14 @@ public class CardNumGame {
         // 가장 작은 수 뽑아내기
         for(int i = 1; i < N; i++){
             if(array[i-1][0] <= array[i][0]){
-                bigyo = array[i-1][0];
+                array[i][0] = array[i-1][0];
             }else {
-                bigyo = array[i][0];
+                continue;
             }
         }
 
         // 답
-        System.out.println(bigyo);
+        System.out.println(array[N-1][0]);
         
     }
 }

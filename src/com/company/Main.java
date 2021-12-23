@@ -8,9 +8,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Adventure ad = new Adventure();
+        AddOrMulti ad = new AddOrMulti();
 
-        ad.guild();
+        ad.calc();
 
     }
 }

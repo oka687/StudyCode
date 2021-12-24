@@ -8,9 +8,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        AddOrMulti ad = new AddOrMulti();
+        Reverse ad = new Reverse();
 
-        ad.calc();
+        ad.upSideDown();
 
     }
 }

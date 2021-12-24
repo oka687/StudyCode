@@ -11,7 +11,7 @@ public class Reverse {
         int countZero = 0;
         int countOne = 0;
         char save;
-        char backSave = '2';
+        char backSave = '2';    // 0,1이 아닌 문자로 초기화
 
         Scanner sc = new Scanner(System.in);
         str = sc.nextLine();
@@ -31,10 +31,7 @@ public class Reverse {
                 }
         }
 
-        if(countOne < countZero){
-            System.out.println(countOne);
-        }else{
-            System.out.println(countZero);
-        }
-    }
+        // 작은 수 출력
+        System.out.println(Math.min(countOne,countZero));
+     }
 }

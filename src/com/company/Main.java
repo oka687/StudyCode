@@ -8,9 +8,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Reverse ad = new Reverse();
+        //Reverse ad = new Reverse();
+        //ad.upSideDown();
 
-        ad.upSideDown();
-
+        DoNotMake ad = new DoNotMake();
+        ad.momey();
     }
 }

@@ -23,6 +23,8 @@ public class DoNotMake {
         // 정렬
         Arrays.sort(array);
 
+        System.out.println(array.length);
+
         for(int i = 0; i < N; i++){
             if (count >= array[i]){
                 count = count + array[i];

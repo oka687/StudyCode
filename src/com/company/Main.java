@@ -8,7 +8,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        LuckyStr str = new LuckyStr();
-        str.skill();
+        ReString str = new ReString();
+
+        str.rebuild();
+
     }
 }

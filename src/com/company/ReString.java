@@ -28,6 +28,7 @@ public class ReString {
         String answer = new String(arrStr);
         String arrayNum = Integer.toString(arrayAdd);
 
+        //답
         System.out.println(answer + arrayNum);
     }
 }

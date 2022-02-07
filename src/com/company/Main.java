@@ -8,9 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        ReString str = new ReString();
-
-        str.rebuild();
-
+        StringZiper sz = new StringZiper();
+        sz.zipper();
     }
 }

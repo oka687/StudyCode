@@ -30,36 +30,45 @@ public class StringZiper {
         int start = 0;      // 나누기 시작점
         int end = 0;        // 나누기 끝점
         String divideAnswer = "";
-        for(int l = 0; l < dvideNum; l++){
+        for(int l = 0; l < dvideNum; l++) {
 
             end = start + cut;
 
-            String divideStr = str.substring(start,end);
+            String divideStr = str.substring(start, end);
             start = end;
 
-            if(divideStr.length() >= 2){
+
+            if (divideStr.length() >= 2) {
                 char divdeStart = divideStr.charAt(0);
                 int count = 0;
 
-                for(int s = 0; s < divideStr.length(); s++){
-                    if(divideStr.charAt(s) == divdeStart){
+                for (int s = 0; s < divideStr.length(); s++) {
+                    if (divideStr.charAt(s) == divdeStart) {
                         count++;
-                    }else{
-                        divideAnswer = count + String.valueOf(divdeStart);
-                        count = 1;
+                        if (s + 1 == divideStr.length()) {
+                            divideAnswer = divideAnswer + count + divdeStart;
+                        }
+                    } else if (divideStr.charAt(s) != divdeStart) {
+                        if (count < 1) {
+                            divideAnswer = divideAnswer + divdeStart;
+                            count = 0;
+                        } else {
+                            divideAnswer = divideAnswer + count + divdeStart;
+                        }
+                        count = 0;
                         divdeStart = divideStr.charAt(s);
                     }
                 }
-            }else{
-                divideAnswer = divideAnswer + divideStr;
             }
         }
-        if(dvideNum % cut != 0){
-            System.out.println(divideAnswer+str.substring(str.length() -1-dvideNum % cut,str.length()) +"/" + divideAnswer.length() +"/"+cut);
-        }else {
-            System.out.println(divideAnswer + "/" + divideAnswer.length() + "/" + cut);
-        }
-        System.out.println("=================");
+            if (dvideNum % cut != 0) {
+                String answer = divideAnswer + str.substring(str.length() - (1 + dvideNum % cut), str.length()-1);
+                System.out.println(answer.replace("1","") + "/" + answer.length() + "/" + cut);
+            } else {
+                String answer = divideAnswer + str.substring(str.length() - (1 + dvideNum % cut), str.length()-1);
+                System.out.println(answer.replace("1","") + "/" + answer.length() + "/" + cut);
+            }
+            System.out.println("=================");
 
     }
 }

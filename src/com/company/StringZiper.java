@@ -37,23 +37,29 @@ public class StringZiper {
             String divideStr = str.substring(start,end);
             start = end;
 
-            if(divideStr.length() > 2){
+            if(divideStr.length() >= 2){
                 char divdeStart = divideStr.charAt(0);
                 int count = 0;
-
 
                 for(int s = 0; s < divideStr.length(); s++){
                     if(divideStr.charAt(s) == divdeStart){
                         count++;
                     }else{
                         divideAnswer = count + String.valueOf(divdeStart);
+                        count = 1;
                         divdeStart = divideStr.charAt(s);
                     }
                 }
+            }else{
+                divideAnswer = divideAnswer + divideStr;
             }
-
         }
-        System.out.println(divideAnswer);
+        if(dvideNum % cut != 0){
+            System.out.println(divideAnswer+str.substring(str.length() -1-dvideNum % cut,str.length()) +"/" + divideAnswer.length() +"/"+cut);
+        }else {
+            System.out.println(divideAnswer + "/" + divideAnswer.length() + "/" + cut);
+        }
         System.out.println("=================");
+
     }
 }

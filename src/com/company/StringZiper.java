@@ -90,7 +90,7 @@ public class StringZiper {
                 if(prev.equals(sub)) cnt += 1;
                 //다른 문자열이 나왔다면(더 이상 압축하지 못하는 경우라면)
                 else{
-                    compressed += (cnt >=2)? cnt + prev : prve;
+                    compressed += (cnt >=2)? cnt + prev : prev;
                     sub = "";
                     for(int k = j; k < j + step; k++){
                         if(k < s.length()) sub += s.charAt(k);

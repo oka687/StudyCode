@@ -5,8 +5,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        StringZiper sz = new StringZiper();
+       ChickenZip cz = new ChickenZip();
 
-        sz.zipper();
+       cz.call();
     }
 }

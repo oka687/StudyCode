@@ -35,7 +35,7 @@ public class Younsan {
             arrGiho[g] = sc2.nextInt();
         }
 
-
+        // 연산자를 배열로 받는다
         for(int inputY = 0; inputY < arrGiho.length; inputY++){
             if(inputY == 0){
                 for(int count = 0; count < arrGiho[0]; count++) {
@@ -59,6 +59,7 @@ public class Younsan {
             }
         }
 
+        //array로 받은 것을 계산하기 용이하게 배열로 만들어준다
         for(int counting = 0; counting < giho.size(); counting++){
             arr[counting] = giho.get(counting);
         }
@@ -66,7 +67,7 @@ public class Younsan {
         // 모든 경우의 순열 구하기
        pernute(arr,0,N-1);
 
-        // 모든 경우의 수를 구하는 연산자 순열
+        // 모든 경우의 수를 구하는 연산자 순열 계산
           for(int t = 0; t < arrs.size(); t++){
             //System.out.println(arrs.get(t));
             String calcing =  arrs.get(t);

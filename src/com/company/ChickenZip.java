@@ -1,70 +1,60 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class ChickenZip {
 
+    static int N, M, ans = Integer.MAX_VALUE;
+    static boolean[] ck;
+    static List<int[]> home, chicken;
+
     public void call(){
-
         Scanner sc = new Scanner(System.in);
+        N = sc.nextInt();
+        M = sc.nextInt();
 
-        int c = sc.nextInt();
+        home = new ArrayList<>();
+        chicken = new ArrayList<>();
 
-        c = c +1;
-        // 배열 선언
-        int [][] array = new int[c][c];
-        ArrayList<String> arrZip = new ArrayList<>();  // 집 좌표
-        ArrayList<String> arrChi = new ArrayList<>();  // 치킨집 좌표
-
-
-        for (int i = 1; i < c; i++){
-            for (int l = 1; l < c; l++){
-                array[i][l] = 0;
-            }
-        }
-
-        // 집
-        array[1][3] = 1;
-        array[2][5] = 1;
-        array[3][2] = 1;
-        array[4][3] = 1;
-
-        //치킨집
-        array[2][3] = 2;
-        array[3][3] = 2;
-        array[5][5] = 2;
-
-        
-        // 출력
-        for(int i = 1; i < c; i++){
-            for (int l = 1; l < c; l++){
-                System.out.print(array[i][l]);
-            }
-            System.out.println("");
-        }
-
-        System.out.println("===============문제==================");
-
-        // 집과 치킨집을 리스트로 나눠담기
-        for(int i = 1; i < c; i++){
-            for (int l = 1; l < c; l++){
-                if(array[i][l] == 1){
-                    arrZip.add(i + "," + l);
-                }else if(array[i][l] == 2){
-                    arrChi.add(i + "," + l);
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++)
+                switch (sc.nextInt()) {
+                    case 1:
+                        home.add(new int[]{i, j});
+                        break;
+                    case 2:
+                        chicken.add(new int[]{i, j});
+                        break;
                 }
+        }
+        ck = new boolean[chicken.size()];
+        comb(-1, 0);
+
+        System.out.println(ans);
+        }
+
+    static void comb(int idx, int cnt) {
+        if (cnt == M) {
+            int dist = 0;
+
+            for (int[] h : home) {
+                int tmp = Integer.MAX_VALUE;
+                for (int i = 0; i < ck.length; i++) {
+                    if (ck[i])
+                        tmp = Math.min(tmp, Math.abs(h[0] - chicken.get(i)[0]) + Math.abs(h[1] - chicken.get(i)[1]));
+                }
+                dist += tmp;
             }
+            ans = Math.min(ans, dist);
+            return;
         }
 
-        // 출력 확인
-        for(String i : arrZip){
-            System.out.println(i);
+        for (int i = idx + 1; i < ck.length; i++) {
+            ck[i] = true;
+            comb(i, cnt + 1);
+            ck[i] = false;
         }
-
-        for(String l : arrChi){
-            System.out.println(l);
-        }
-
     }
 }

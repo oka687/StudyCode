@@ -1,3 +1,4 @@
+/*
 package com.company;
 
 import java.io.BufferedReader;
@@ -133,3 +134,4 @@ public class Virus {
         return true;
     }
 }
+*/
